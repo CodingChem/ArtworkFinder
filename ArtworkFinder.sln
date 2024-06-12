@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtworkFinder.Library", "ArtworkFinder.Library\ArtworkFinder.Library.csproj", "{04CA1AA5-C73D-4A29-9294-44EAA17A183F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtworkFinder.CLI", "ArtworkFinder.CLI\ArtworkFinder.CLI.csproj", "{DD7E88F3-3D7A-4435-BC49-6A5748DF9E6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{04CA1AA5-C73D-4A29-9294-44EAA17A183F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04CA1AA5-C73D-4A29-9294-44EAA17A183F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04CA1AA5-C73D-4A29-9294-44EAA17A183F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7E88F3-3D7A-4435-BC49-6A5748DF9E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7E88F3-3D7A-4435-BC49-6A5748DF9E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7E88F3-3D7A-4435-BC49-6A5748DF9E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7E88F3-3D7A-4435-BC49-6A5748DF9E6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
