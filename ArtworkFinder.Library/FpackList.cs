@@ -7,7 +7,7 @@ public class FpackList
 	private List<FpackDataModel> Fpacks { get; set; }
 	private WorkQue WorkQue { get; set; }
 	public string[] CustomerDirectories { get; set; }
-	public FpackList(string baseSearchPath)
+	public FpackList(string baseSearchPath = "V:\\01_Customers\\Active")
 	{
 		CustomerDirectories = GetCustomerDirectories(baseSearchPath) ?? throw new ArgumentNullException(nameof(baseSearchPath));
 		WorkQue = new WorkQue();
