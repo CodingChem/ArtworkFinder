@@ -6,7 +6,7 @@ public class FpackList
 {
 	private List<FpackDataModel> Fpacks { get; set; }
 	private WorkQue WorkQue { get; set; }
-	public string[] CustomerDirectories { get; set; }
+	private string[] CustomerDirectories { get; set; }
 	private int QueuedTasks { get; set; }
 	public FpackList(string baseSearchPath = "V:\\01_Customers\\Active")
 	{
@@ -59,5 +59,9 @@ public class FpackList
 	public int GetQueuedTasks()
 	{
 		return QueuedTasks;
+	}
+	public int GetNumberOfFpacks()
+	{
+		return Fpacks.Count;
 	}
 }
