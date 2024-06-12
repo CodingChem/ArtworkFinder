@@ -6,17 +6,20 @@ public class FpackList
 {
 	private List<FpackDataModel> Fpacks { get; set; }
 	private WorkQue WorkQue { get; set; }
-	public string[] CustomerDirectories { get; set; }
-	public FpackList(string baseSearchPath)
+	private string[] CustomerDirectories { get; set; }
+	private int QueuedTasks { get; set; }
+	public FpackList(string baseSearchPath = "V:\\01_Customers\\Active")
 	{
 		CustomerDirectories = GetCustomerDirectories(baseSearchPath) ?? throw new ArgumentNullException(nameof(baseSearchPath));
 		WorkQue = new WorkQue();
 		Fpacks = new List<FpackDataModel>();
+		QueuedTasks = 0;
 	}
 	public void AddFpack(string customerName, string itemNumber)
 	{
 		var fpack = new FpackDataModel(customerName, itemNumber);
 		WorkQue.EnqueueTask(() => AddArtworkToFpack(this, fpack, CustomerDirectories)); 
+		QueuedTasks++;
 	}
 	public void AddFpack(FpackDataModel Fpack)
 	{
@@ -47,9 +50,18 @@ public class FpackList
 			}
 		}
 		self.AddFpack(fpack);
+		self.QueuedTasks--;
 	}
 	private string[] GetCustomerDirectories(string baseSearchPath)
 	{
 		return Directory.GetDirectories(baseSearchPath);
+	}
+	public int GetQueuedTasks()
+	{
+		return QueuedTasks;
+	}
+	public int GetNumberOfFpacks()
+	{
+		return Fpacks.Count;
 	}
 }
