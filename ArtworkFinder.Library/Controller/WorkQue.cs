@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 
 namespace ArtworkFinder.Library.Controllers;
 
-public class WorkQue
+internal class WorkQue
 {
     private BlockingCollection<Action> _taskQue = new BlockingCollection<Action>();
     public WorkQue()
@@ -23,14 +23,8 @@ public class WorkQue
     {
         foreach (var task in _taskQue.GetConsumingEnumerable())
         {
-            try
-            {
-                task.Invoke();
-            }
-            catch (CustomerNotFoundException e)
-            {
-                Console.WriteLine(e.Message + " " + e.CustomerName);
-            }
+            // Can this trow an exception?
+            task.Invoke();
         }
     }
     public void Finish()
