@@ -21,8 +21,8 @@ internal class Program
 		Console.WriteLine();
 		Console.WriteLine(message);
 		Console.WriteLine();
-		Console.WriteLine($"Queued Fpacks: ${fpackList.GetQueuedTasks()}");
-		Console.WriteLine($"Found  Fpacks: ${fpackList.GetNumberOfFpacks()}");
+		Console.WriteLine($"Queued Fpacks: {fpackList.GetQueuedTasks()}");
+		Console.WriteLine($"Found  Fpacks: {fpackList.GetNumberOfFpacks()}");
 		Console.WriteLine("Select action:");
 		Console.WriteLine("1) Add Fpack to Que");
 		Console.WriteLine("2) View Artwork");
@@ -42,8 +42,11 @@ internal class Program
 			case "1":
 				DisplayAddFpackMenu();
 				return;
+			case "2":
+				DisplayViewFpackMenu();
+				return;
 			default:
-				DisplayMessage = $"Error: ${userInput} is not a valid option.";
+				DisplayMessage = $"Error: {userInput} is not a valid option.";
 				return;
 		}
 	}
@@ -60,9 +63,13 @@ internal class Program
             }
 			string[] userInputArray = userInput.Split(' ');
 			if (userInputArray.Length != 2) continue;
-            string customerName = userInput.Split(' ')[0];
-			string itemNumber = userInput.Split(" ")[1];
+            string customerName = userInputArray[0];
+			string itemNumber = userInputArray[1];
 			fpackList.AddFpack(customerName, itemNumber);
 		}
+	}
+	private static void DisplayViewFpackMenu()
+	{
+		throw new NotImplementedException();
 	}
 }
