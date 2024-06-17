@@ -2,15 +2,17 @@
 
 public class FpackDataModel
 {
-	public FpackDataModel(string customerName, string itemNumber)
+	public string CustomerName { get; private set; }
+	public string ItemNumber { get; private set; }
+	public List<ArtworkDataModel>? ArtworkFiles { get; private set; }
+    public FpackDataModel(string customerName, string itemNumber, List<ArtworkDataModel>? artworkFiles = null)
+    {
+        CustomerName = customerName;
+        ItemNumber = itemNumber;
+        ArtworkFiles = artworkFiles;
+    }
+	public override string ToString()
 	{
-		CustomerName = customerName ?? throw new ArgumentNullException(nameof(customerName));
-		ItemNumber = itemNumber ?? throw new ArgumentNullException(nameof(itemNumber));
-		ArtworkFiles = new();
+		return $"{CustomerName} - {ItemNumber}";
 	}
-
-	public string CustomerName { get; set; }
-        public string ItemNumber { get; set; }
-        public List<ArtworkDataModel> ArtworkFiles { get; set; }
-
 }
