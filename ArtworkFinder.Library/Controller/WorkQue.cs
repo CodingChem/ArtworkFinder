@@ -1,6 +1,4 @@
-﻿using ArtworkFinder.Library.Exceptions;
-using ArtworkFinder.Library.Models;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 
 namespace ArtworkFinder.Library.Controllers;
 

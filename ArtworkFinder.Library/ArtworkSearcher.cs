@@ -4,9 +4,9 @@ using ArtworkFinder.Library.Models;
 
 namespace ArtworkFinder.Library;
 
-public class ArtworkFinder
+public class ArtworkSearcher
 {
-	public ArtworkFinder(string baseSearchPath)
+	public ArtworkSearcher(string baseSearchPath)
 	{
 		CustomerDirectories = Directory.GetDirectories(baseSearchPath);
 		FpackList = new List<Fpack>();

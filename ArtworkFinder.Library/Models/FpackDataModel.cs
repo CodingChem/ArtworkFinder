@@ -11,4 +11,8 @@ public class FpackDataModel
         ItemNumber = itemNumber;
         ArtworkFiles = artworkFiles;
     }
+	public override string ToString()
+	{
+		return $"{CustomerName} - {ItemNumber}";
+	}
 }
