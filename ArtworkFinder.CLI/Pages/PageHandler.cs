@@ -9,9 +9,9 @@ namespace ArtworkFinder.CLI.Pages
 		private ArtworkSearcher ArtworkFinder;
 		private List<FpackDataModel> FinishedFpack;
 		private List<FpackDataModel> UnfinishedFpack;
-        public PageHandler()
+        public PageHandler(string path)
         {
-			ArtworkFinder = new("V:\\01_Customers\\Active");
+			ArtworkFinder = new(path);
 			FinishedFpack = ArtworkFinder.GetAvailableFpack();
 			UnfinishedFpack = ArtworkFinder.GetUnavailableFpack();
 			ArtworkFinder.SearchProgressUpdatedEvent += ArtworkFinder_SearchProgressUpdatedEvent;
