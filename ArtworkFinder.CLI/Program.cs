@@ -6,6 +6,8 @@ public class Program
 {
 	public static void Main(string[] args)
 	{
-		var run = new PageHandler();
+		if (args.Lenght != 2)
+			throw InvalidArgumentException("Please provide the base search path")
+		var run = new PageHandler(args[1]);
 	}
 }
